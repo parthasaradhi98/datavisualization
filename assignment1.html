@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Data Visualization Class</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Roboto", sans-serif;
+    }
+
+    .w3-sidebar {
+        z-index: 3;
+        width: 250px;
+        top: 43px;
+        bottom: 0;
+        height: inherit;
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <div class="w3-top">
+        <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+            <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1"
+                href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+            <a href="./index.html" class="w3-bar-item w3-button w3-theme-l1">Home</a>
+            <a href="./assignment1.html" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Assignments</a>
+
+        </div>
+    </div>
+    <!-- Sidebar -->
+    <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()"
+            class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+            <i class="fa fa-remove"></i>
+        </a>
+        <h4 class="w3-bar-item"><b>Menu</b></h4>
+        <a class="w3-bar-item w3-button w3-hover-black" href="./index.html">Home</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="./assignment1.html">Assignment 1</a>
+        <a class="w3-bar-item w3-button w3-hover-black" href="./assignment2.html">Assignment 2</a>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+    <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+    <div class="w3-main" style="margin-left:250px">
+
+        <div class="w3-row w3-padding-64">
+            <div class="w3-twothird w3-container">
+                <h1 class="w3-text-teal">Assignment 1: Creating a data visualization class web page</h1>
+                <h2>Helpful or insightful data visualization</h2>
+                <p>Throughout my work in Computational Fluid Dynamics, I have come across numerous data visualizations
+                    of certain physical quantities.
+                    The most common quantities that are visualized are the temperature, velocity and the flow
+                    (direction) distribution of any medium.
+                    One of the interesting phenomenon I studied is the vortex shedding of a water flow through a hot
+                    cylindrical obstacle.
+                    Placing an obstacle in an undisturbed flow, causes the water stream to split up and merge behind the
+                    cylinder.
+                    But, having a hot cylinder causes the formation of vortices (circular shaped entities) behind the
+                    water that merge in an alternating fashion.
+                    This phenomenon is clearly shown in a simulation video, where the colors are used to show the
+                    temperature (red being hot, and blue being cold, black being the free stream temperature that isn't
+                    affected by the hot cylinder).
+                    A static image would be really difficult to comprehend for a novice, so this animation really
+                    explains the effect from the start of the flow disturbance.
+                    This visualization is not perfect, as it fails to mention the direction of flow of liquid. The
+                    visualization also assumes the black color to be the lowest temperature instead of blue, which goes
+                    against the intuition.
+
+                    <!-- https://www.youtube.com/watch?v=JI0M1gVNhbw
+                    https://www.youtube.com/watch?v=IDeGDFZSYo8 -->
+                </p>
+                <video width="320" height="240" controls>
+                    <source src="./images/Vortex Simulation.mp4#t=37,80" type=video/mp4>
+                </video>
+                <p><a href="https://www.youtube.com/watch?v=IDeGDFZSYo8">source</a></p>
+                <p>This data visualization becomes even more insightful when it is backed up by experimental evidence
+                    shown below:</p>
+                <video width="320" height="240" controls>
+                    <source src="./images/Vortex Experiment.mp4#t=129,147" type=video/mp4>
+                </video>
+                <p><a href="https://www.youtube.com/watch?v=JI0M1gVNhbw">source</a></p>
+
+                <h2>Unhelpful or bad data visualization</h2>
+                <p>Bad data visualization is really common in Computational Fluid Dynamics, since the domain is usually
+                    3 dimensional in nature and there are multiple parameters that vary (velocity, temperature, and
+                    pressure).
+                    One of the variables, velocity, being directional in nature requires both magnitude and direction to
+                    be shown in the plot. This often makes the visualization cluttered as shown in the part(a) of the
+                    figure shown below. The pvisualization also shows both temperature and velocity magnitudes on the
+                    same plot, which makes it difficult to interpret the magnitude of velocity.
+                </p>
+                <img class="avatar"
+                    src="./images/CFD-cross-sectional-and-mid-plane-plots-of-velocity-vector-contours-of-temperature.png"
+                    alt="data visualization picture" />
+                <p><a
+                        href="https://www.researchgate.net/figure/CFD-cross-sectional-and-mid-plane-plots-of-velocity-vector-contours-of-temperature-and_fig5_276542183">source</a>
+                </p>
+            </div>
+
+            <div class="w3-third w3-container">
+                <p class="w3-padding-large w3-center">
+
+                </p>
+            </div>
+        </div>
+
+        <!-- <footer id="myFooter">
+            <div class="w3-container w3-theme-l1">
+                <p>Webpage HTML and CSS source: <a href="https://www.w3schools.com/w3css/w3css_templates.asp"
+                        target="_blank">w3schools</a></p>
+            </div>
+        </footer> -->
+
+        <!-- END MAIN -->
+    </div>
+
+    <script src="./javascript/sidebar.js"></script>
+
+</body>
+
+</html>
